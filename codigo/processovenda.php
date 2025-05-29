@@ -25,6 +25,17 @@
         <p>Data</p>
         <input type="date" id="data" name="data">
         <p>Preço</p>
+                <?php
+                    require_once "conexao.php";
+                    require_once "funcoes.php";
+                    $listaprodutos = listarProdutos($conexao);
+                    foreach($listaprodutos as $produto){
+                        $nome = $produto['nome'];
+                        $idproduto = $produto['idproduto'];
+
+                        echo "<input type='checkbox' name='produto[]
+                    } 
+                ?>
         <input type="text" id="preço" name="preço">
     
     </form>
