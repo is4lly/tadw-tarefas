@@ -7,9 +7,8 @@
 </head>
 <body>
     <p> escolha um vendedor</p>
-    <select> Nome do vendedor</select>
-
-
+    <select> <br>
+     Nome do vendedor</select>
 
 </body>
 </html>
