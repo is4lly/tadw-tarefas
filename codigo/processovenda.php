@@ -13,9 +13,10 @@
             $sql = "SELECT idcliente, nome FROM tb_cliente";
             $resultados = mysqli_query($conexao, $sql);
             if ($resultado){
-                $clienteid=mysqli_fetch_assoc($resultado);
+                $clienteid=mysqli_fetch_array($resultado);
                 foreach($clienteid as $clienteid){
-                    $nome=['idcliente'];
+                    $id=$linha["clienteid"];
+                    $nome=$linha['nome'];
                     echo "<option value='id'>$nome</option>";
                 }
             }
