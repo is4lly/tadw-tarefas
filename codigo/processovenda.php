@@ -9,7 +9,7 @@
     <p> escolha um vendedor</p>
     <select> <br>
     Nome do vendedor</select>
-    <p>Data</p> <br><br>
+    <p>Data</p>
     <input type="date" id="data" name="data">
     <p>Preço</p>
     <input type="text" id="preço" name="preço">
