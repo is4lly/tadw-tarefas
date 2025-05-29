@@ -38,6 +38,7 @@ function listarClientes($conexao) {
     mysqli_stmt_close($comando);
 
     return $lista_clientes;
+    echo $lista_clientes;
 }
 
 function editarCliente($conexao, $nome, $cpf, $endereco, $id) {
