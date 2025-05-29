@@ -6,12 +6,20 @@
     <title>Processo de Venda</title>
 </head>
 <body>
-    <p> escolha um vendedor</p>
+    <p> escolha um cliente</p>
     <select> 
         <?php
             require_once "conexao.php";
-            require_once "funcoes.php";
-            // listarClientes($conexão);
+            $sql = "SELECT idcliente, nome FROM tb_cliente";
+            $resultados = mysqli_query($conexao, $sql);
+            if ($resultado){
+                $clienteid=mysqli_fetch_assoc($resultado);
+                foreach($clienteid as $clienteid){
+                    $nome=['idcliente'];
+                    echo "<option value='id'>$nome</option>";
+                }
+            }
+            
         ?>
     </select>
     <p>Data</p>
