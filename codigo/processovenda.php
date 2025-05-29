@@ -7,8 +7,12 @@
 </head>
 <body>
     <p> escolha um vendedor</p>
-    <select> <br>
-    Nome do vendedor</select>
+    <select> 
+        <?php
+            require_once "conexao.php";
+            require_once "funcoes.php";
+        ?>
+    </select>
     <p>Data</p>
     <input type="date" id="data" name="data">
     <p>Preço</p>
