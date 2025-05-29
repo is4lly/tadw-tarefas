@@ -28,12 +28,13 @@
                 <?php
                     require_once "conexao.php";
                     require_once "funcoes.php";
-                    $listaprodutos = listarProdutos($conexao);
-                    foreach($listaprodutos as $produto){
+                    $listaproduto = listarProdutos($conexao);
+                    foreach($listaproduto as $produto){
                         $nome = $produto['nome'];
                         $idproduto = $produto['idproduto'];
 
-                        echo "<input type='checkbox' name='produto[]
+                        echo "<input type='checkbox' name='produto[]' value='$id'> $nome";
+                        echo "<input type='text' name='quantidade[]' value='0'><br>";
                     } 
                 ?>
         <input type="text" id="preço" name="preço">
