@@ -6,8 +6,8 @@
     <title>Processo de Venda</title>
 </head>
 <body>
-    <p> escolha um vendendor</p>
-    <input type="
+    <p> escolha um vendedor</p>
+    <select> Nome do vendedor</select>
 
 
 
