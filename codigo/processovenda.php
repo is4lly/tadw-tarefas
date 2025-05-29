@@ -6,26 +6,34 @@
     <title>Processo de Venda</title>
 </head>
 <body>
-    <p> escolha um cliente</p>
-    <select> 
-        <?php
-            require_once "conexao.php";
-            $sql = "SELECT idcliente, nome FROM tb_cliente";
-            $resultados = mysqli_query($conexao, $sql);
-            if ($resultado){
-                $clienteid=mysqli_fetch_array($resultado);
-                foreach($clienteid as $clienteid){
-                    $id=$linha["clienteid"];
-                    $nome=$linha['nome'];
-                    echo "<option value='id'>$nome</option>";
-                }
-            }
-            
-        ?>
-    </select>
-    <p>Data</p>
-    <input type="date" id="data" name="data">
-    <p>Preço</p>
-    <input type="text" id="preço" name="preço">
+    <form>
+
+        <p> escolha um cliente</p>
+        <select> 
+            <?php
+                require_once "conexao.php";
+                require_once "funcoes.php";
+    
+    
+    
+                // $sql = "SELECT idcliente, nome FROM tb_cliente";
+                // $resultados = mysqli_query($conexao, $sql);
+                // if ($resultado){
+                //     $clienteid=mysqli_fetch_array($resultado);
+                //     foreach($clienteid as $clienteid){
+                //         $id=$linha["clienteid"];
+                //         $nome=$linha['nome'];
+                //         echo "<option value='id'>$nome</option>";
+                //     }
+                // }
+                
+            ?>
+        </select>
+        <p>Data</p>
+        <input type="date" id="data" name="data">
+        <p>Preço</p>
+        <input type="text" id="preço" name="preço">
+    
+    </form>
 </body>
 </html>
