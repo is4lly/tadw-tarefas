@@ -11,7 +11,7 @@
         <?php
             require_once "conexao.php";
             require_once "funcoes.php";
-            listarClientes($conexão);
+            // listarClientes($conexão);
         ?>
     </select>
     <p>Data</p>
