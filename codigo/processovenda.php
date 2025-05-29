@@ -17,7 +17,7 @@
                 foreach ($listacliente as $cliente){
                     $nome = $cliente;
                     $idcliente = $cliente;
-                    echo"<option value'$idcliente'>$nome</option>";
+                    echo"<option value='$idcliente'>$nome</option>";
                 }
                 
             ?>
