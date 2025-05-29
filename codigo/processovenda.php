@@ -13,7 +13,7 @@
             <?php
                 require_once "conexao.php";
                 require_once "funcoes.php";
-                $listaclientes = listarClientes($conexao);
+                $listacliente = listarClientes($conexao);
                 foreach ($listacliente as $clientes){
                     $nome = $clientes;
                     $idcliente = $cliente;
