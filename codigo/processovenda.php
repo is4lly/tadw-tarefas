@@ -15,8 +15,8 @@
                 require_once "funcoes.php";
                 $listacliente = listarClientes($conexao);
                 foreach ($listacliente as $cliente){
-                    $nome = $cliente;
-                    $idcliente = $cliente;
+                    $nome = $cliente['nome'];
+                    $idcliente = $cliente['idcliente'];
                     echo"<option value='$idcliente'>$nome</option>";
                 }
                 
