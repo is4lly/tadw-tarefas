@@ -53,15 +53,57 @@ function editarCliente($conexao, $nome, $cpf, $endereco, $id) {
 
 function deletarProduto($conexao, $idproduto) {};
 
-function listarProdutos() {};
+function listarProdutos($conexao) {
+    $sql = "SELECT * FROM tb_produto";
+    $comando = mysqli_prepare($conexao, $sql);
+    mysqli_stmt_execute($comando);
+    $resultados = mysqli_stmt_get_result($comando);
+    $lista_produto = [];
+    while ($produto = mysqli_fetch_assoc($resultados)){
+        $lista_produto[] = $produto;
+    }
+    mysqli_stmt_close($comando);
+    return $lista_produto;
+}
 
-function salvarProduto() {};
+function salvarProduto($conexao, $nome, $tipo, $preco_compra, $preco_venda, $margem_lucro, $quantidade) {
+    $sql = "INSERT INTO tb_produto (nome, tipo, preco_compra, preco_venda, margem_lucro, quantidade) VALUES (?,?,?,?,?,?)"; 
+    $comando = mysqli_prepare($conexao, $sql);
+    mysqli_stmt_bind_param($comando, 'ssdddd', $nome, $tipo, $preco_compra, $preco_venda, $margem_lucro, $quantidade);
+    $funcionou = mysqli_stmt_execute($comando);
+    mysqli_stmt_close($comando);
+    
+    return $funcionou;
+}
 
-function editarProduto() {};
+
+function editarProduto($conexao, $nome, $tipo, $preco_compra, $preco_venda, $margem_lucro, $quantidade){
+    $sql = "UPDATE tb_produto SET nome=?, tipo=?, preco_compra=?, preco_venda=?, margem_lucro=?, quantidade=? WHERE idproduto=?";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'ssddddi', $nome, $tipo, $preco_compra, $preco_venda, $margem_lucro, $quantidade, $id);
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    return $funcionou;
+}
 
 
 //desafio
-function salvarUsuario() {};
+function salvarUsuario($conexao, $nome, $email, $senha) {
+    $sql = "INSERT INTO tb_usuario (nome, email, senha) VALUES (?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($comando, 'sss', $nome, $email, $senha_hash);
+    
+    $funcionou = mysqli_stmt_execute($comando);
+    mysqli_stmt_close($comando);
+    
+    return $funcionou;
+};
+
 
 function salvarVenda($conexao, $idcliente, $valor_total, $data) {
     $sql = "INSERT INTO tb_venda (idcliente, valor_total, data) VALUES (?, ?, ?)";
