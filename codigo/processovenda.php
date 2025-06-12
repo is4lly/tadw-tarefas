@@ -37,7 +37,6 @@
                         echo "<input type='text' name='quantidade[]' value='0'><br>";
                     } 
                 ?>
-        <input type="text" id="preço" name="preço"><br><br>
         <input type="submit" value="compra">
     
     </form>
