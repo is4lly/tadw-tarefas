@@ -1,16 +1,17 @@
 <?php
+    require_once "conexao.php";
+    require_once "funcoes.php";
     $produto = $_GET["produto"];
     $quantidade = $_GET['quantidade'];
 
     $idcliente = $_POST['cliente'];
     $data = $_POST['data'];
-    $valor = $_POST["valor"];
     $produto = $_POST['produto'] ?? [];
     $quantidade = $_POST['quantidade'] ?? [];
     if (empty($produto)){
         die("Nada Selecionado");
     }
-    $sql_venda = "INSERT INJTO td_venda (idcliente, valor_total, data) VALUES (?,?,?)";
+    $sql_venda = "INSERT INTO tb_venda (idcliente, valor_total, data) VALUES (?,?,?)";
     $stmt_venda = mysqli_prepare($conexao, $sql_venda);
     mysqli_stmt_bind_param($stmt_venda, "ids", $idcliente, $valor, $data);
     if (!mysqli_stmt_execute($stmt_venda)){
