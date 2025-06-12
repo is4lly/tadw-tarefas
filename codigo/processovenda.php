@@ -16,18 +16,18 @@
                 $listacliente = listarClientes($conexao);
                 foreach ($listacliente as $cliente){
                     $nome = $cliente['nome'];
-                    $idcliente = $cliente['idcliente'];
-                    echo"<option value='$idcliente'>$nome</option>";
+                    $id = $cliente['idcliente'];
+                    echo"<option value='$id'>$nome</option>";
                 }
                 
             ?>
         </select>
         <p>Data</p>
-        <input type="date" id="data" name="data">
+        <input type="date" id="data" name="data" required> 
         <p>Preço</p>
+        <input type="text" name="preco" required> <br><br>
+
                 <?php
-                    require_once "conexao.php";
-                    require_once "funcoes.php";
                     $listaproduto = listarProdutos($conexao);
                     foreach($listaproduto as $produto){
                         $nome = $produto['nome'];
