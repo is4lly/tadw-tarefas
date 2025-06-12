@@ -34,7 +34,7 @@
                         $idproduto = $produto['idproduto'];
 
                         echo "<input type='checkbox' name='produto[]' value='$idproduto'> $nome";
-                        echo "<input type='text' name='quantidade[]' value='0'><br>";
+                        echo "<input type='number' name='quantidade[]'><br>";
                     } 
                 ?>
         <input type="submit" value="compra">
