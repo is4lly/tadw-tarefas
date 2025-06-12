@@ -9,7 +9,7 @@
     <form action="saida.php" method="post">
 
         <p> escolha um cliente</p>
-        <select> 
+        <select name="idcliente" required> 
             <?php
                 require_once "conexao.php";
                 require_once "funcoes.php";

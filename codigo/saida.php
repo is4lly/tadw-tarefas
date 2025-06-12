@@ -2,7 +2,7 @@
     require_once "conexao.php";
     require_once "funcoes.php";
 
-    $idcliente = $_POST['cliente'];
+    $idcliente = $_POST['idcliente'];
     $data = $_POST['data'];
     $produto = $_POST['produto'] ?? [];
     $quantidade = $_POST['quantidade'] ?? [];
