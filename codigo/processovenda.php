@@ -33,11 +33,12 @@
                         $nome = $produto['nome'];
                         $idproduto = $produto['idproduto'];
 
-                        echo "<input type='checkbox' name='produto[]' value='$id'> $nome";
+                        echo "<input type='checkbox' name='produto[]' value='$idproduto'> $nome";
                         echo "<input type='text' name='quantidade[]' value='0'><br>";
                     } 
                 ?>
-        <input type="text" id="preço" name="preço">
+        <input type="text" id="preço" name="preço"><br><br>
+        <input type="button" value="compra">
     
     </form>
 </body>
