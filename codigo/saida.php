@@ -1,8 +1,6 @@
 <?php
     require_once "conexao.php";
     require_once "funcoes.php";
-    $produto = $_GET["produto"];
-    $quantidade = $_GET['quantidade'];
 
     $idcliente = $_POST['cliente'];
     $data = $_POST['data'];
