@@ -38,7 +38,7 @@
                     } 
                 ?>
         <input type="text" id="preço" name="preço"><br><br>
-        <input type="button" value="compra">
+        <input type="submit" value="compra">
     
     </form>
 </body>
