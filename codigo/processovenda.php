@@ -6,7 +6,7 @@
     <title>Processo de Venda</title>
 </head>
 <body>
-    <form>
+    <form action="processovenda.php" method="post">
 
         <p> escolha um cliente</p>
         <select> 
@@ -38,6 +38,8 @@
                     } 
                 ?>
         <input type="submit" value="compra">
+
+        
     
     </form>
 </body>
