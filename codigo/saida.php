@@ -22,7 +22,7 @@ $sql_item = "INSERT INTO tb_item_venda(idvenda, idproduto, quantidade) VALUES (?
 $stmt_item = mysqli_prepare($conexao, $sql_item);
 for ($i = 0; $i < count($produto); $i++) {
     $idproduto = $produto[$i];
-    $quantidade = $quantidade[$i];
+    $quantidades = $quantidade[$i];
 
     if (!empty($uqantidade) && $quantidade > 0) {
         mysqli_stmt_bind_param($stmt_item, "iid", $idvenda, $idproduto, $quantidade);
